@@ -1,0 +1,9 @@
+<launch>
+    <node pkg="chassis_odom" type="chassis_odom_node" name="chassis_odom">
+        <!-- 里程计节点需要实时订阅底盘反馈的速度消息，并完成积分发布里程计信息 -->
+        <remap from="/real_speed" to="/real_speed"/>
+
+        <!-- imu数据的订阅 -->
+        <remap from="/data_raw" to="/imu_data"/>
+    </node>
+</launch>
